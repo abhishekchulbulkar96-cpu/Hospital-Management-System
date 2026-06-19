@@ -1,0 +1,34 @@
+.login-body{
+    background:linear-gradient(
+        135deg,
+        #DBEAFE,
+        #FFFFFF
+    );
+}
+
+.login-card{
+    border:none;
+    border-radius:25px;
+}
+
+.hospital-icon{
+    color:#2563EB;
+}
+
+.login-btn{
+    background:#2563EB;
+    color:white;
+    font-weight:bold;
+    padding:12px;
+    border-radius:10px;
+}
+
+.login-btn:hover{
+    background:#1D4ED8;
+    color:white;
+}
+
+.form-control{
+    height:50px;
+    border-radius:10px;
+}

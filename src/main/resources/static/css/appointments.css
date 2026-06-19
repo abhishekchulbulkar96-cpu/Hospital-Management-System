@@ -1,0 +1,50 @@
+body{
+    background:#f4f8fc;
+}
+
+.page-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+.page-header h2{
+    color:#2563EB;
+}
+
+.form-card,
+.table-card{
+
+    border:none;
+
+    border-radius:20px;
+
+    box-shadow:0px 5px 15px rgba(0,0,0,0.1);
+}
+
+.card-header{
+
+    background:#2563EB;
+
+    color:white;
+
+    font-weight:bold;
+}
+
+.form-control{
+
+    border-radius:10px;
+}
+
+.btn-success{
+
+    background:#16a34a;
+
+    border:none;
+}
+
