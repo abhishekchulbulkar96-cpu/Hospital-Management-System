@@ -1,5 +1,7 @@
 package com.hospital.service;
 
+
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,4 +69,12 @@ public class DoctorService {
         return repo.save(doctor);
     }
     
+    public List<Doctor>
+    getDoctorsByDepartment(
+            Long deptId){
+
+        return repo.findByDepartmentDeptId(
+                deptId);
+    
+}
 }

@@ -1,8 +1,14 @@
 package com.hospital.dto;
 
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotNull;
-
+import lombok.Data;
+@Data
 public class AppointmentDTO {
+	
+	
+	@NotNull
+	private Long deptId;
 
     @NotNull
     private Long patientId;
@@ -12,6 +18,9 @@ public class AppointmentDTO {
 
     @NotNull
     private String appointmentDate;
+    
+    @NotNull
+    private String reason;
 
     // getters & setters
 

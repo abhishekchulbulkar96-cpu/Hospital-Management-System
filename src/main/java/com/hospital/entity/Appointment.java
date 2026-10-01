@@ -30,6 +30,11 @@ public class Appointment {
 
     @Column(name = "APPOINTMENT_DATE")
     private LocalDate appointmentDate;
+    
+    
+    @Column(name = "REASON")
+	private String reason;
+	
 
     // getters & setters
 
@@ -64,4 +69,14 @@ public class Appointment {
     public void setAppointmentDate(LocalDate appointmentDate) {
         this.appointmentDate = appointmentDate;
     }
+
+	public String getReason() {
+		return reason;
+	}
+
+	public void setReason(String reason) {
+		this.reason = reason;
+	}
+    
+    
 }

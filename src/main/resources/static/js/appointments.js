@@ -4,11 +4,13 @@
 
     loadPatients();
 
-    loadDoctors();
+    loadDepartments();
 
     loadAppointments();
 
 };
+
+
 function loadPatients(){
 
     fetch("/patients")
@@ -63,6 +65,74 @@ function loadDoctors(){
     });
 
 }
+function loadDepartments(){
+
+    fetch("/departments")
+
+    .then(response =>
+        response.json())
+
+    .then(data => {
+
+        let dropdown =
+            document.getElementById(
+                "department"
+            );
+
+        dropdown.innerHTML =
+            '<option value="">Select Department</option>';
+
+        data.forEach(dept => {
+
+            dropdown.innerHTML +=
+
+            `<option value="${dept.deptId}">
+                ${dept.deptName}
+            </option>`;
+
+        });
+
+    });
+
+}
+function loadDoctorsByDepartment(){
+
+    let deptId =
+        document.getElementById(
+            "department"
+        ).value;
+
+    fetch(
+        "/doctors/department/" +
+        deptId
+    )
+
+    .then(response =>
+        response.json())
+
+    .then(data => {
+
+        let dropdown =
+            document.getElementById(
+                "doctor"
+            );
+
+        dropdown.innerHTML =
+            '<option value="">Select Doctor</option>';
+
+        data.forEach(doctor => {
+
+            dropdown.innerHTML +=
+
+            `<option value="${doctor.doctorId}">
+                ${doctor.name}
+            </option>`;
+
+        });
+
+    });
+
+}
 
 function saveAppointment(){
 
@@ -75,7 +145,10 @@ function saveAppointment(){
         document.getElementById("doctor").value,
 
         appointmentDate:
-        document.getElementById("appointmentDate").value
+        document.getElementById("appointmentDate").value,
+
+        reason:
+        document.getElementById("reason").value
 
     };
 
@@ -110,6 +183,7 @@ function saveAppointment(){
 }
 
 
+
 function loadAppointments(){
 
     fetch("/appointments")
@@ -136,6 +210,8 @@ function loadAppointments(){
 		        <td>${app.patient.name}</td>
 
 		        <td>${app.doctor.name}</td>
+				
+				<td>${app.reason}</td>
 
 		        <td>${app.appointmentDate}</td>
 
@@ -147,6 +223,7 @@ function loadAppointments(){
 		                    ${app.appointmentId},
 		                    ${app.patient.patientId},
 		                    ${app.doctor.doctorId},
+							'${app.reason}',
 		                    '${app.appointmentDate}'
 		                )">
 
@@ -243,6 +320,7 @@ function editAppointment(
     id,
     patientId,
     doctorId,
+	reason,
     date){
 
     document.getElementById("appointmentId").value = id;
@@ -250,6 +328,9 @@ function editAppointment(
     document.getElementById("patient").value = patientId;
 
     document.getElementById("doctor").value = doctorId;
+	document.getElementById(
+	    "reason"
+	).value = reason;
 
     document.getElementById("appointmentDate").value = date;
 }

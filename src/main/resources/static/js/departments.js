@@ -192,3 +192,33 @@ function editDepartment(
     ).value=name;
 
 }
+
+function loadDepartments(){
+
+    fetch("/departments")
+
+    .then(response => response.json())
+
+    .then(data => {
+
+        let dropdown =
+            document.getElementById(
+                "department"
+            );
+
+        dropdown.innerHTML =
+            '<option value="">Select Department</option>';
+
+        data.forEach(dept => {
+
+            dropdown.innerHTML +=
+
+            `<option value="${dept.deptId}">
+                ${dept.deptName}
+            </option>`;
+
+        });
+
+    });
+
+}

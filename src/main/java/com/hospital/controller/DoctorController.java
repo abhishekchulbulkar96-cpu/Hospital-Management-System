@@ -40,4 +40,18 @@ public class DoctorController {
         return service.updateDoctor(id, dto);
     }
     
+    @GetMapping(
+    		"/department/{deptId}"
+    		)
+    		public List<Doctor>
+    		getDoctorsByDepartment(
+    		@PathVariable Long deptId){
+
+    		    return service
+    		            .getDoctorsByDepartment(
+    		                    deptId);
+    		}
+    
+    
+    
 }

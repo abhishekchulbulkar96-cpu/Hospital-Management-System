@@ -42,6 +42,8 @@ public class AppointmentService {
         appointment.setPatient(patient);
         appointment.setDoctor(doctor);
         appointment.setAppointmentDate(LocalDate.parse(dto.getAppointmentDate()));
+        appointment.setReason(
+                dto.getReason());
 
         // 4. Save to DB
         return repo.save(appointment);
@@ -78,18 +80,30 @@ public class AppointmentService {
         appointment.setPatient(patient);
 
         appointment.setDoctor(doctor);
+       
 
         appointment.setAppointmentDate(
                 LocalDate.parse(
                         dto.getAppointmentDate()));
+        
+        appointment.setReason(dto.getReason());
 
         return repo.save(appointment);
+        
+       
+        
+        
+        
     }
     
+    
+   
     public Appointment getAppointmentById(
             Long id){
 
         return repo.findById(id)
                 .orElseThrow();
     }
+    
+    
 }

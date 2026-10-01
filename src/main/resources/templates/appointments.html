@@ -59,23 +59,92 @@
                         </option>
 
                     </select>
+                    <div class="col-md-4">
+
+
+</div>	
 
                 </div>
 
                 <div class="col-md-4">
+                
+<label>Department</label>
 
-                    <label>Doctor</label>
+<select
+id="department"
+class="form-control"
+onchange="loadDoctorsByDepartment()">
+
+</select>
+
+                    
+
+                </div>
+                
+                <div class="col-md-4">
+
+<label>Doctor</label>
 
                     <select id="doctor"
                             class="form-control">
 
                         <option value="">
                             Select Doctor
-                        </option>
+                        </option>	
 
                     </select>
+</div>
+<div class="col-md-4">
 
-                </div>
+    <label>Reason For Visit</label>
+
+    <select
+            id="reason"
+            class="form-control">
+
+        <option value="">
+            Select Reason
+        </option>
+
+        <option value="Fever">
+            Fever
+        </option>
+
+        <option value="Stomach Pain">
+            Stomach Pain
+        </option>
+
+        <option value="Skin Allergy">
+            Skin Allergy
+        </option>
+
+        <option value="Headache">
+            Headache
+        </option>
+
+        <option value="Chest Pain">
+            Chest Pain
+        </option>
+
+        <option value="Eye Problem">
+            Eye Problem
+        </option>
+
+        <option value="Blood Pressure">
+            Blood Pressure
+        </option>
+
+        <option value="Diabetes Checkup">
+            Diabetes Checkup
+        </option>
+
+        <option value="Other">
+            Other
+        </option>
+
+    </select>
+
+</div>
 
                 <div class="col-md-4">
 
@@ -132,6 +201,7 @@
                     <th>ID</th>
                     <th>Patient</th>
                     <th>Doctor</th>
+                    <th>Reason</th> 	
                     <th>Date</th>
                     <th>Action</th>
 

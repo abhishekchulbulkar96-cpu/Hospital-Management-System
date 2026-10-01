@@ -42,43 +42,50 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
                     </div>
 
-            <form action="/login" method="post">
+           <form action="/login" method="post">
 
-                        <div class="mb-3">
+    <div class="mb-3">
 
-                            <label class="form-label">
-                                Username
-                            </label>
+        <label class="form-label">
+            Username
+        </label>
 
-                            <input type="text"
-       name="username"
-       class="form-control"
-       placeholder="Enter Username">
+        <input type="text"
+               name="username"
+               class="form-control"
+               placeholder="Enter Username">
 
-                        </div>
+    </div>
 
-                        <div class="mb-4">
+    <div class="mb-3">
 
-                            <label class="form-label">
-                                Password
-                            </label>
+        <label class="form-label">
+            Password
+        </label>
 
-                            <input type="password"
-       name="password"
-       class="form-control"
-       placeholder="Enter Password">
+        <input type="password"
+               name="password"
+               class="form-control"
+               placeholder="Enter Password">
 
-                        </div>
+    </div>
 
-                        <button type="submit"
-                                class="btn login-btn w-100">
+    <div th:if="${error}"
+         class="alert alert-danger">
 
-                            Login
+        <span th:text="${error}">
+        </span>
 
-                        </button>
+    </div>
 
-                    </form>
+    <button type="submit"
+            class="btn btn-primary w-100">
 
+        Login
+
+    </button>
+
+</form>
                 </div>
 
             </div>
